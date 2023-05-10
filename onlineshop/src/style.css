@@ -97,10 +97,10 @@ p {
   padding-right: 25px;
 }
 .col-3{
-  flex-basis: 25%;
+  flex-basis: 20%;
   padding: 10px;
   min-width: 100px;
-  margin-top: 50px;
+  margin-top: 35px;
   transition: transform 0.5 ;
 }
 .col-3 img{
@@ -116,7 +116,7 @@ p {
 .title::after{
   content: '';
   background:  linear-gradient(to right,#E40138,#010052);
-  width: 80px;
+  width: 100px;
   height: 5px;
   border-radius: 5px;
   position: absolute;
