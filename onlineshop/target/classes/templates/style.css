@@ -224,3 +224,31 @@ select:focus{
 }
 
 
+.single-product{
+  margin-top: 80px;
+}
+.single-product .col{
+  padding: 20px;
+}
+.single-product .col img{
+  padding: 0;
+}
+.single-product h4{
+  margin: 20px 0;
+  font-size: 22px;
+  font-weight: bold;
+}
+.single-product input{
+  width: 50px;
+  height: 40px;
+  padding-left: 10px;
+  font-size: 20px;
+  margin-right: 10px;
+  border: 1px solid black;
+}
+input:focus{
+  outline: none;
+}
+.single-product .fa{
+  color: yellow
+}
