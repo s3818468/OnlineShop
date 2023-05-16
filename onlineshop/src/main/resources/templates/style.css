@@ -168,6 +168,49 @@ h4{
   display: none;
 }
 
+/*----- productform -----*/
+.form-row{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 10px;
+  margin-bottom: 8px;
+}
+.form-col{
+  display: flex;
+  width: calc(100% / 2 - 15px);
+  flex-direction: column;
+}
+.form-col label{
+    font-weight: 500;
+}
+.form-col input{
+  outline: none;
+  font-size: 14px;
+  border-radius: 5px;
+  border: 1px solid #aaa;
+  padding: 0 15px;
+  height: 40px;
+  margin-top: 10px;
+}
+.form-col textarea{
+  outline: none;
+  font-size: 14px;
+  border-radius: 5px;
+  border: 1px solid #aaa;
+  padding: 0 15px;
+  height: 40px;
+  margin-top: 10px;
+}
+.form-col select{
+  outline: none;
+  font-size: 14px;
+  border-radius: 5px;
+  border: 1px solid #aaa;
+  padding: 0 15px;
+  height: 40px;
+  margin-top: 10px;
+}
 
 /*----- allproduct -----*/
 .row-2{
