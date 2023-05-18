@@ -8,7 +8,6 @@ public class CRUD {
     private String document_id;
     private String name;
     private String password;
-    private String type;
     private String phoneid;
     private String address;
 }

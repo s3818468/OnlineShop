@@ -27,6 +27,7 @@ a {
   text-decoration: none;
   color: black;
 }
+
 p {
   color: #555;
 }
@@ -253,7 +254,55 @@ input:focus{
   color: yellow
 }
 
-
+/*----- productform -----*/
+.form-container h3{
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+.form-row{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 10px;
+  margin-bottom: 8px;
+}
+.form-col{
+  display: flex;
+  width: calc(100% / 2 - 15px);
+  flex-direction: column;
+}
+.form-col label{
+    font-weight: 500;
+}
+.form-col input{
+  outline: none;
+  font-size: 14px;
+  border-radius: 5px;
+  border: 1px solid #aaa;
+  padding: 0 15px;
+  height: 40px;
+  margin-top: 10px;
+}
+.form-col textarea{
+  outline: none;
+  font-size: 14px;
+  border-radius: 5px;
+  border: 1px solid #aaa;
+  padding: 0 15px;
+  height: 40px;
+  margin-top: 10px;
+}
+.form-col select{
+  outline: none;
+  font-size: 14px;
+  border-radius: 5px;
+  border: 1px solid #aaa;
+  padding: 0 15px;
+  height: 40px;
+  margin-top: 10px;
+}
 
 .loginContainer{
   background-image: linear-gradient(rgba(206, 73, 70, 0.8),rgba(142, 142, 240, 0.8)) ,url("images/rmitvietnamlandscape.jpg");
@@ -305,7 +354,7 @@ input:focus{
   overflow: hidden;
 
 }
-input{
+.input-field input{
   width: 100%;
   background: transparent;
   border: 0;
@@ -347,4 +396,78 @@ form a{
 .button-field button.disable{
   background: #eaeaea;
   color: #555;
+}
+
+
+/* cart */
+.cart-page{
+  margin: 80px auto;
+
+}
+table{
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.cart-info{
+  display: flex;
+  flex-wrap: wrap;
+}
+th{
+  text-align: left;
+  padding: 5px;
+  color: #fff;
+  background: #3711c0;
+  font-weight: normal;
+}
+td{
+  padding: 10px 15px;
+}
+td input{
+  width: 40px;
+  height: 30px;
+  padding: 5px;
+
+}
+td a{
+  color: #E40138;
+  font-size: 12px;
+}
+td img{
+  width: 100px;
+  
+  margin-right: 10px;
+}
+
+.total-price{
+  display: flex;
+  justify-content: flex-end;
+}
+.total-price table{
+  border-top: 3px solid 3711c0 ; 
+  max-width: 350px;
+}
+
+td:last-child{
+  text-align: right;
+}
+th:last-child{
+  text-align: right;
+}
+.pay-button{
+  width: 100%;
+  display: flex;
+ 
+  
+}
+.pay-button button{
+  
+  flex-basis: 48%;
+  background: #3711c0;
+  color: #fff;
+  height: 40px;
+  border-radius: 20px;
+  border: 0;
+  outline: 0;
+  cursor: pointer;
 }
