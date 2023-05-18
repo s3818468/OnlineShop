@@ -1,5 +1,6 @@
 package com.java.firebase;
 
+import java.lang.String;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -12,3 +13,4 @@ public class CRUD {
     private String phoneid;
     private String address;
 }
+
