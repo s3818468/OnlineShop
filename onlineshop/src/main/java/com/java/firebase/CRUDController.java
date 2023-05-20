@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.concurrent.ExecutionException;
 
 @RestController
+@CrossOrigin(origins = "*")
 public class CRUDController {
 
     public CRUDService crudService;
@@ -17,7 +18,6 @@ public class CRUDController {
     public String createCRUD(@RequestBody CRUD crud) throws InterruptedException, ExecutionException {
         return crudService.createCRUD(crud);
     }
-
     @GetMapping("/get")
     public CRUD getCRUD(@RequestParam String documentId) throws InterruptedException, ExecutionException {
         return crudService.getCRUD(documentId);
