@@ -1,14 +1,14 @@
 
 let signupBtn = document.getElementById("signupBtn");
 let signinBtn = document.getElementById("signinBtn");
-let nameField = document.getElementById("nameField");
+let phoneField = document.getElementById("phoneField");
 let btnSignup = document.getElementById("btnSignup")
 let btnLogin = document.getElementById("btnLogin");
 let title = document.getElementById("title")
 
 
 signinBtn.onclick = function(){
-    nameField.style.maxHeight = "0";
+    phoneField.style.maxHeight = "0";
     title.innerText = "Sign In";
     signupBtn.classList.add("disable");
     signinBtn.classList.remove("disable");
@@ -19,7 +19,7 @@ signinBtn.onclick = function(){
 
 
 signupBtn.onclick = function(){
-    nameField.style.maxHeight = "60px";
+    phoneField.style.maxHeight = "60px";
     title.innerText = "Sign Up";
     signupBtn.classList.remove("disable");
     signinBtn.classList.add("disable");
@@ -27,29 +27,52 @@ signupBtn.onclick = function(){
      btnLogin.style.visibility = "hidden";
 
 }
- document.querySelector("#btnSignup").onclick = function () {
+document.querySelector("#btnSignup").onclick = function () {
+    let name = document.querySelector('#name').value;
+    let phone = document.querySelector('#phone').value;
+    let password = document.querySelector('#password').value;
+     fetch('http://localhost:8080/get?documentId=' + name)
+             .then(response => {
+                 if (!response.ok) {
+                     throw new Error('Network response was not ok');
+                 }
+                 return response.json();
+             })
+             .then(json => {
+                 alert('username already taken')
+             })
+             .catch(error => {
+                 fetch('http://localhost:8080/create', {
+                         method: "post",
+                         headers: {
+                             'Content-Type': 'application/json'
+                         },
+                         body: JSON.stringify({name: name, phoneid: phone, password: password})
+                     })
+                     .then(response => {
+                         if (response.ok) {
+                             alert('Account created successfully!');
+                             return response.json();
+                         } else {
+                             throw new Error('Server Error');
+                         }
+                     })
+                     .then(json => {
+                         console.log(json);
+                         // Additional code for success response if needed
+                     })
+                     .catch(error => {
+                         console.error(error);
+                         if (error.message === 'Server Error') {
+                             alert('An error occurred while creating the account. Please try again later.');
+                         }
+                     });
 
+             });
 
-       let name = document.querySelector('#name').value
-       let email = document.querySelector('#email').value
-       let password = document.querySelector('#password').value
-
-       fetch('http://localhost:8080/create', {
-           method: "post",
-           headers: {
-               'Content-Type': 'application/json'
-           },
-           body: JSON.stringify({name: name, address: email,password: password})
-       })
-       .then(response => response.json())
-              .then(json => {
-                 console.log(json);
-
-              })
-
-   }
+};
 document.querySelector("#btnLogin").onclick = function () {
-    let name = document.querySelector('#email').value;
+    let name = document.querySelector('#name').value;
     let passwordd = document.querySelector('#password').value;
 
     fetch('http://localhost:8080/get?documentId=' + name)
@@ -64,16 +87,19 @@ document.querySelector("#btnLogin").onclick = function () {
 
                         if (password === passwordd) {
                             // Password matches
-                            title.innerText = name;
+
+                            localStorage.setItem('login-state', 1);
+                            localStorage.setItem('currentUser', name);
+                            window.location.href = "index.html";
                         } else {
                             // Password doesn't match
-                            alert('Invalidd credentials. Please try again.');
+                            alert('Invalid credentials. Please try again.');
                         }
         })
         .catch(error => {
             // Handle the error here
             console.error('Error:', error);
-            alert('Could not find anythding. Please try again.');
+            alert('Could not find anything. Please try again.');
         });
 };
 
