@@ -39,7 +39,7 @@ signupBtn.onclick = function(){
            headers: {
                'Content-Type': 'application/json'
            },
-           body: JSON.stringify({name: name, email: email,password: password})
+           body: JSON.stringify({name: name, address: email,password: password})
        })
        .then(response => response.json())
               .then(json => {
@@ -48,33 +48,36 @@ signupBtn.onclick = function(){
               })
 
    }
- document.querySelector("#btnLogin").onclick = function () {
-     let name = document.querySelector('#name').value
-     let password = document.querySelector('#password').value
-     fetch('http://localhost:8080/get?documentId=${name}', {
-         method: "GET",
-         headers: {
-             'Content-Type': 'application/json'
-         }
-     })
-     .then(response => response.json())
-     .then(data => {
-         // Assuming the response data is an array of objects representing user records
+document.querySelector("#btnLogin").onclick = function () {
+    let name = document.querySelector('#email').value;
+    let passwordd = document.querySelector('#password').value;
 
-         // Iterate over each user in the data array
-         data.forEach(user => {
-             // Extract the username and password properties
-             const username = user.username;
-             const password = user.password;
+    fetch('http://localhost:8080/get?documentId=' + name)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.json();
+        })
+        .then(json => {
+             const { name, password } = json;
 
-             // Perform actions with the username and password
-             console.log("Username:", username);
-             console.log("Password:", password);
-         });
-     })
-     .catch(error => {
-         console.error(error);
+                        if (password === passwordd) {
+                            // Password matches
+                            title.innerText = name;
+                        } else {
+                            // Password doesn't match
+                            alert('Invalidd credentials. Please try again.');
+                        }
+        })
+        .catch(error => {
+            // Handle the error here
+            console.error('Error:', error);
+            alert('Could not find anythding. Please try again.');
+        });
+};
 
-     });
- };
+
+
+
 

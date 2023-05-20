@@ -19,8 +19,10 @@ public class CRUDRunner {
     public static void main(String []args) throws IOException {
         ClassLoader classLoader = CRUDRunner.class.getClassLoader();
 
-        File file = new File(Objects.requireNonNull(classLoader.getResource("serviceAccountKey.json")).getFile());
-        FileInputStream serviceAccount = new FileInputStream(file.getAbsolutePath());
+/*        File file = new File(Objects.requireNonNull(classLoader.getResource("serviceAccountKey.json")).getFile());
+        FileInputStream serviceAccount = new FileInputStream(file.getAbsolutePath());*/
+        FileInputStream serviceAccount =
+                new FileInputStream("D:\\RMIT\\Enterprise App Dev\\OnlineShop\\onlineshop\\src\\main\\resources\\serviceAccountKey.json");
 
 //        FirebaseOptions options = new FirebaseOptions.Builder().setCredentials(GoogleCredentials.fromStream(serviceAccount)).setDatabaseUrl("")
 

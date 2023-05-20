@@ -24,7 +24,7 @@ public class ProductController {
     }
 
     @PutMapping("/product/update")
-    public String updateProduct(@RequestParam Product p) throws InterruptedException, ExecutionException {
+    public String updateProduct(@RequestBody Product p) throws InterruptedException, ExecutionException {
         return productService.updateProduct(p);
     }
     @PutMapping("product/delete")

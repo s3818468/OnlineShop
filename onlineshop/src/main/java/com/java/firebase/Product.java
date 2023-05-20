@@ -11,7 +11,7 @@ public class Product {
     private String description;
     private String imageUrl;
     private String price;
-    private Integer discount; //1: 10%; 2: 20%; 3: 50%; 4: 80%
+    private String discount; //1: 10%; 2: 20%; 3: 50%; 4: 80%
     private String owner;
 
 }
