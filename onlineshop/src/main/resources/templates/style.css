@@ -254,6 +254,11 @@ input:focus{
   color: yellow
 }
 
+.manageProduct{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
 /*----- productform -----*/
 .form-container h3{
     font-size: 20px;
