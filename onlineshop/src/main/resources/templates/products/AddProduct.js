@@ -1,0 +1,1 @@
+let btnAddProduct = document.getElementByID("btnAddProduct")
