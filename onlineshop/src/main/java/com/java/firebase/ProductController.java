@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.concurrent.ExecutionException;
 
 @RestController
+@CrossOrigin(origins = "*")
 public class ProductController {
 
     public ProductService productService;

@@ -27,16 +27,15 @@
 }*/
 let btnAddProduct = document.getElementById("btnAddProduct");
 
-/*btnAddProduct.onclick = function() {
+btnAddProduct.onclick = function() {
     let api_link='http://localhost:8080/product/create'
     let product_data={
-        "product_id": "product_3",
-        "name": "frontend",
-        "description": "front end test",
-        "imageUrl": "url",
-        "price": "$0.00",
-        "discount": "10%",
-        "owner": "frontend"
+        "name": document.getElementById("name").value,
+        "description": document.getElementById("desc").value,
+        "imageUrl": document.getElementById("url").value,
+        "price": document.getElementById("price").value,
+        "discount": document.getElementById("disc").value,
+        "owner": "frontend1"
     }
     product_data = JSON.stringify(product_data)
     fetch(api_link,{
@@ -49,7 +48,7 @@ let btnAddProduct = document.getElementById("btnAddProduct");
     )
     .then(response => {
          if (response.ok) {
-             alert('Account created successfully!');
+             alert('Product created successfully!');
              return response.json();
          } else {
              throw new Error('Server Error');
@@ -65,8 +64,4 @@ let btnAddProduct = document.getElementById("btnAddProduct");
              alert('An error occurred while creating the account. Please try again later.');
          }
     })
-}*/
-btnAddProduct.onclick = function() {
-    fetch('http://localhost:8080/product/get?productId=Lakers')
-    .then(response => console.log(response))
 }
