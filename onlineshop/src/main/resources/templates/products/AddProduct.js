@@ -61,7 +61,7 @@ btnAddProduct.onclick = function() {
      .catch(error => {
          console.error(error);
          if (error.message === 'Server Error') {
-             alert('An error occurred while creating the account. Please try again later.');
+             alert('An error occurred while creating the product. Please try again later.');
          }
     })
 }
