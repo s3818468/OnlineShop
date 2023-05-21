@@ -24,9 +24,6 @@ public class CRUDRunner {
         FileInputStream serviceAccount =
                 new FileInputStream("D:\\RMIT\\Enterprise App Dev\\OnlineShop\\onlineshop\\src\\main\\resources\\serviceAccountKey.json");
 
-//        FirebaseOptions options = new FirebaseOptions.Builder().setCredentials(GoogleCredentials.fromStream(serviceAccount)).setDatabaseUrl("")
-
-
         FirebaseOptions options = new FirebaseOptions.Builder()
                 .setCredentials(GoogleCredentials.fromStream(serviceAccount))
                 .setDatabaseUrl("https://crud-test1-23bd8-default-rtdb.asia-southeast1.firebasedatabase.app")
