@@ -1,30 +1,9 @@
-/*async function addProduct() {
-    let product_data = {
-    name: document.getElementByID("name").value,
-    description: document.getElementByID("desc").value,
-    imageUrl: document.getElementByID("url").value,
-    price: document.getElementByID("price").value,
-    discount: document.getElementByID("disc").value,
-    owner: "frontend"
-    }
-
-    product_data = JSON.stringify(product_data)
-    let api_link = 'http://localhost:8080/product/create'
-
-    let response=await fetch(api_link,{
-            method:"POST",
-            body:product_data,
-            headers:{
-                'Content-Type':'application/json'
-            }
-        })
-        let data=await response.json()
-
-        if(data.message!=null){
-            alert(data.message);
-        }
-
-}*/
+/*let user= localStorage.getItem("currentUser")
+    if(user==null){
+        alert("please login")
+    window.location.href="SignUp.html"
+    }*/
+const owner = localStorage.getItem('currentUser');
 let btnAddProduct = document.getElementById("btnAddProduct");
 
 btnAddProduct.onclick = function() {
@@ -35,7 +14,7 @@ btnAddProduct.onclick = function() {
         "imageUrl": document.getElementById("url").value,
         "price": document.getElementById("price").value,
         "discount": document.getElementById("disc").value,
-        "owner": "frontend1"
+        "owner": owner
     }
     product_data = JSON.stringify(product_data)
     fetch(api_link,{
