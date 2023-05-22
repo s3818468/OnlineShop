@@ -476,3 +476,72 @@ th:last-child{
   outline: 0;
   cursor: pointer;
 }
+
+/* account */
+.input-group {
+  padding: 5px;
+}
+
+.input-group label {
+  display: flex;
+  margin-bottom: 5px;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.btn-group {
+  margin-top: 20px;
+}
+
+.btn-group button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #010052;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-right: 10px;
+}
+/* prroduct */
+       
+.name{
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+.desc{
+  font-size: 14px;
+  line-height: 20px;
+}
+.add_to_cart{
+  display: inline-block;
+  background: #010052;
+  color: white;
+  padding: 8px 15px;
+  margin: 10px 5px;
+  border-radius: 30px;
+  transition: background 0.5s;
+}
+.details{
+  display: inline-block;
+  background: #010052;
+  color: white;
+  padding: 8px 15px;
+  margin: 10px 5px;
+  border-radius: 30px;
+  transition: background 0.5s;
+}
+
+#parent>div{
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  padding: 20px 30px;
+  border-radius: 5px;
+}
+#parent>div:hover{
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}

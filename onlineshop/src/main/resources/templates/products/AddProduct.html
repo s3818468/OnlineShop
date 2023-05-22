@@ -17,7 +17,7 @@
   </head>
 
   <body>
-    <div class="container">
+    <div class="header"><div class="container">
       <div class="NavBar">
         <div class="logo">
           <img src="../images\logo.png" width="125px" />
@@ -26,13 +26,15 @@
           <ul id="MenuItems">
             <li><a href="../index.html"> Home </a></li>
             <li><a href="../products/product.html"> Product </a></li>
-            <li><a href=""> Account </a></li>
+            <li><a href="AddProduct.html">Post Product</a></li>
+            <li><a href="../account.html"> Account </a></li>
           </ul>
         </nav>
         <a href="../products/cart.html"><img src="../images/cart.png" width="30px" height="30px"/></a>
         <img src="../images/menu.png" class="menu" onclick="menutoggle()" />
       </div>
-    </div>
+    </div></div>
+    
 
     <div class="container">
       <form action="" method="post">
@@ -45,17 +47,20 @@
             </div>
             <div class="form-col">
               <label>Product Description</label>
-              <input type="text" id ="desc" class="form-control"/>
+              <textarea name="" id="desc" cols="30" rows="10"></textarea>
+              
             </div>
           </div>
           <div class="form-row">
             <div class="form-col">
               <label>Price</label>
+              
               <input type="text" id ="price" class="form-control" placeholder="Price" />
             </div>
             <div class="form-col">
               <label>Discount Percentage</label>
               <select id="disc">
+                <option value="0%">0%</option>
                 <option value="10%">10%</option>
                 <option value="20%">20%</option>
                 <option value="50%">50%</option>
