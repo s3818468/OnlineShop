@@ -76,5 +76,5 @@ function viewProductDetails(product) {
   sessionStorage.setItem("selectedProduct", JSON.stringify(product));
 
   // Redirect to the product detail page
-  window.location.href = "detail.html";
+  window.location.href = "./products/detail.html";
 }
