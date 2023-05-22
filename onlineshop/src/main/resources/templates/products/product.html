@@ -35,11 +35,22 @@
             line-height: 20px;
         }
         .add_to_cart{
-            padding: 5px 10px;
-            margin-top: 10px;
-            border-radius: 10px;
-            cursor: pointer;
-            font-weight: bolder;
+            display: inline-block;
+            background: #010052;
+            color: white;
+            padding: 8px 15px;
+            margin: 10px 5px;
+            border-radius: 30px;
+            transition: background 0.5s;
+        }
+        .details{
+            display: inline-block;
+            background: #010052;
+            color: white;
+            padding: 8px 15px;
+            margin: 10px 5px;
+            border-radius: 30px;
+            transition: background 0.5s;
         }
 
         #parent>div{
@@ -136,6 +147,17 @@
             }
         }
     </style>
+    <style>
+        .pagination-wrapper {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+
+        .pagination-wrapper a {
+          margin: 0 5px;
+        }
+    </style>
     <title>All product1</title>
 </head>
 
@@ -161,7 +183,10 @@
     </div>
 
     <div id="parent" class="products">
-        <div id="product_row" class="row-2"></div>
+
+    </div>
+    <div id="pagination">
+        <!-- Pagination links will be dynamically added here -->
     </div>
     <div class="manageProduct">
         <a href="AddProduct.html" class="button">Manage products</a>
