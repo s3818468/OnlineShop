@@ -13,7 +13,7 @@ btnLogin.onclick = function () {
         btnLogin.classList.remove("disable");
         btnSignup.classList.add("disable");
         signup = 1;
-        
+
     }
     else if (signup == 1) {
         let name = document.querySelector('#name').value;
@@ -56,7 +56,7 @@ btnSignup.onclick = function () {
         btnLogin.classList.add("disable");
         btnSignup.classList.remove("disable");
         signup = 0;
-       
+
     }
     else if(signup == 0){
         let name = document.querySelector('#name').value;

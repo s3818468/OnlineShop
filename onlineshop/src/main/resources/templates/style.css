@@ -440,7 +440,7 @@ td a{
 }
 td img{
   width: 100px;
-  
+
   margin-right: 10px;
 }
 
@@ -449,7 +449,7 @@ td img{
   justify-content: flex-end;
 }
 .total-price table{
-  border-top: 3px solid 3711c0 ; 
+  border-top: 3px solid 3711c0 ;
   max-width: 350px;
 }
 
@@ -462,11 +462,11 @@ th:last-child{
 .pay-button{
   width: 100%;
   display: flex;
- 
-  
+
+
 }
 .pay-button button{
-  
+
   flex-basis: 48%;
   background: #3711c0;
   color: #fff;
@@ -509,7 +509,7 @@ th:last-child{
   margin-right: 10px;
 }
 /* prroduct */
-       
+
 .name{
   margin-top: 20px;
   margin-bottom: 10px;
