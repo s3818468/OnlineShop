@@ -22,6 +22,9 @@ public class CRUDRunner {
         File file = new File(Objects.requireNonNull(classLoader.getResource("serviceAccountKey.json")).getFile());
         FileInputStream serviceAccount = new FileInputStream(file.getAbsolutePath());
 
+//        FirebaseOptions options = new FirebaseOptions.Builder().setCredentials(GoogleCredentials.fromStream(serviceAccount)).setDatabaseUrl("")
+
+
         FirebaseOptions options = new FirebaseOptions.Builder()
                 .setCredentials(GoogleCredentials.fromStream(serviceAccount))
                 .setDatabaseUrl("https://crud-test1-23bd8-default-rtdb.asia-southeast1.firebasedatabase.app")
