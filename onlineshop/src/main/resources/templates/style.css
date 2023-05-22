@@ -495,21 +495,3 @@ th:last-child{
   border-radius: 30px;
   transition: background 0.5s;
 }
-.details{
-  display: inline-block;
-  background: #010052;
-  color: white;
-  padding: 8px 15px;
-  margin: 10px 5px;
-  border-radius: 30px;
-  transition: background 0.5s;
-}
-
-#parent>div{
-  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-  padding: 20px 30px;
-  border-radius: 5px;
-}
-#parent>div:hover{
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-}
