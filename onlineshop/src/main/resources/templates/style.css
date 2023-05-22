@@ -171,6 +171,15 @@ h4{
 
 
 /*----- allproduct -----*/
+.add_to_cart{
+  display: inline-block;
+  background: #010052;
+  color: white;
+  padding: 8px 15px;
+  margin: 10px 5px;
+  border-radius: 30px;
+  transition: background 0.5s;
+}
 .row-2{
   justify-content: space-between;
   margin: 100px auto 50px;
@@ -182,23 +191,7 @@ select{
 select:focus{
   outline: none;
 }
-.pageButton{
-  margin: 0 auto 80px;
-}
-.pageButton span{
-  display: inline-block;
-  border: 1px solid black;
-  margin-left: 10px;
-  width: 40px;
-  height: 40px;
-  text-align: center;
-  line-height: 40px;
-  cursor: pointer;
-}
-.pageButton span:hover{
-  background: #1d8dde;
-  color: #fff;
-}
+
 @media only screen and (max-width: 800px){
   nav ul{
     position: absolute;
