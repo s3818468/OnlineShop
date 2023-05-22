@@ -1,34 +1,65 @@
 
-let signupBtn = document.getElementById("signupBtn");
-let signinBtn = document.getElementById("signinBtn");
+
 let phoneField = document.getElementById("phoneField");
 let btnSignup = document.getElementById("btnSignup")
 let btnLogin = document.getElementById("btnLogin");
 let title = document.getElementById("title")
+var signup = 0;
 
+btnLogin.onclick = function () {
+    if (signup == 0) {
+        phoneField.style.maxHeight = "0";
+        title.innerText = "Sign In";
+        btnLogin.classList.remove("disable");
+        btnSignup.classList.add("disable");
+        signup = 1;
 
-signinBtn.onclick = function(){
-    phoneField.style.maxHeight = "0";
-    title.innerText = "Sign In";
-    signupBtn.classList.add("disable");
-    signinBtn.classList.remove("disable");
-    btnLogin.style.visibility = "visible";
-    btnSignup.style.visibility = "hidden";
+    }
+    else if (signup == 1) {
+        let name = document.querySelector('#name').value;
+        let passwordd = document.querySelector('#password').value;
 
+        fetch('http://localhost:8080/get?documentId=' + name)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();
+            })
+            .then(json => {
+                const { name, password } = json;
+
+                if (password === passwordd) {
+                    // Password matches
+
+                    localStorage.setItem('login-state', 1);
+                    localStorage.setItem('currentUser', name);
+                    window.location.href = "index.html";
+                } else {
+                    // Password doesn't match
+                    alert('Invalid credentials. Please try again.');
+                }
+            })
+            .catch(error => {
+                // Handle the error here
+                console.error('Error:', error);
+                alert('Could not find anything. Please try again.');
+            });
+    }
 }
 
 
-signupBtn.onclick = function(){
-    phoneField.style.maxHeight = "60px";
-    title.innerText = "Sign Up";
-    signupBtn.classList.remove("disable");
-    signinBtn.classList.add("disable");
-     btnSignup.style.visibility = "visible";
-     btnLogin.style.visibility = "hidden";
+btnSignup.onclick = function () {
+    if (signup == 1) {
+        phoneField.style.maxHeight = "60px";
+        title.innerText = "Sign Up";
+        btnLogin.classList.add("disable");
+        btnSignup.classList.remove("disable");
+        signup = 0;
 
-}
-document.querySelector("#btnSignup").onclick = function () {
-    let name = document.querySelector('#name').value;
+    }
+    else if(signup == 0){
+        let name = document.querySelector('#name').value;
     let phone = document.querySelector('#phone').value;
     let password = document.querySelector('#password').value;
      fetch('http://localhost:8080/get?documentId=' + name)
@@ -69,41 +100,6 @@ document.querySelector("#btnSignup").onclick = function () {
                      });
 
              });
+    }
 
-};
-document.querySelector("#btnLogin").onclick = function () {
-    let name = document.querySelector('#name').value;
-    let passwordd = document.querySelector('#password').value;
-
-    fetch('http://localhost:8080/get?documentId=' + name)
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Network response was not ok');
-            }
-            return response.json();
-        })
-        .then(json => {
-             const { name, password } = json;
-
-                        if (password === passwordd) {
-                            // Password matches
-
-                            localStorage.setItem('login-state', 1);
-                            localStorage.setItem('currentUser', name);
-                            window.location.href = "index.html";
-                        } else {
-                            // Password doesn't match
-                            alert('Invalid credentials. Please try again.');
-                        }
-        })
-        .catch(error => {
-            // Handle the error here
-            console.error('Error:', error);
-            alert('Could not find anything. Please try again.');
-        });
-};
-
-
-
-
-
+}

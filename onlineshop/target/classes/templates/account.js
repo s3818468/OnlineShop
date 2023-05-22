@@ -52,11 +52,8 @@ document.querySelector("#commitChanges").onclick = function () {
                                       alert('An error occurred while updating the account. Please try again later.');
                                   }
                               });}
-document.querySelector("#goHome").onclick = function () {
-    window.location.href = "index.html";
 
-}
 document.querySelector("#logOut").onclick = function () {
-    window.location.href = "signUp.html";
+    window.location.href = "SignUp.html";
 
 }

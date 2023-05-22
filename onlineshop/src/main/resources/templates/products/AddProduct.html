@@ -17,24 +17,25 @@
   </head>
 
   <body>
-    <div class="header"><div class="container">
-      <div class="NavBar">
-        <div class="logo">
-          <img src="../images\logo.png" width="125px" />
-        </div>
-        <nav>
-          <ul id="MenuItems">
-            <li><a href="../index.html"> Home </a></li>
-            <li><a href="../products/product.html"> Product </a></li>
-            <li><a href="AddProduct.html">Post Product</a></li>
-            <li><a href="../account.html"> Account </a></li>
-          </ul>
-        </nav>
-        <a href="../products/cart.html"><img src="../images/cart.png" width="30px" height="30px"/></a>
-        <img src="../images/menu.png" class="menu" onclick="menutoggle()" />
+    <div class="header">
+      <div class="container">
+          <div class="NavBar">
+              <div class="logo">
+                  <img src="../images\logo.png" width="125px" />
+              </div>
+              <nav>
+                  <ul id="MenuItems">
+                      <li><a href="../index.html"> Home </a></li>
+                      <li><a href="../products/product.html"> Product </a></li>
+                      <li><a href="AddProduct.html">Post Product</a></li>
+                      <li><a href="../account.html"> Account </a></li>
+                  </ul>
+              </nav>
+              <a href="../cart.html"><img src="../images/cart.png" width="30px" height="30px"/></a>
+              <img src="../images/menu.png" class="menu" onclick="menutoggle()" />
+          </div>  
       </div>
-    </div></div>
-    
+  </div>
 
     <div class="container">
       <form action="" method="post">
@@ -43,42 +44,40 @@
           <div class="form-row">
             <div class="form-col">
               <label>Product Name</label>
-              <input type="text" id="name" class="form-control" placeholder="Product name" />
+              <input type="text" name="" class="form-control" placeholder="" />
             </div>
             <div class="form-col">
               <label>Product Description</label>
-              <textarea name="" id="desc" cols="30" rows="10"></textarea>
-              
+              <textarea name="" class="form-control"></textarea>
             </div>
           </div>
           <div class="form-row">
             <div class="form-col">
               <label>Price</label>
-              
-              <input type="text" id ="price" class="form-control" placeholder="Price" />
+              <input type="text" name="" class="form-control" placeholder="" />
             </div>
             <div class="form-col">
               <label>Discount Percentage</label>
-              <select id="disc">
-                <option value="0%">0%</option>
-                <option value="10%">10%</option>
-                <option value="20%">20%</option>
-                <option value="50%">50%</option>
-                <option value="80%">80%</option>
+              <select name="">
+                <option value="0">0%</option>
+                <option value="1">10%</option>
+                <option value="2">20%</option>
+                <option value="3">50%</option>
+                <option value="4">80%</option>
               </select>
             </div>
           </div>
           <div class="form-row">
             <div class="form-col">
               <label>Image File URL</label>
-              <input type="text" id="url" class="form-control" placeholder="Image URL" />
+              <input type="file" name="" class="form-control" placeholder="" />
             </div>
+          </div>
+          <div class="form-row">
+            <button type="submit" class="button">Add Product</button>
           </div>
         </div>
       </form>
-      <div class="manageProduct">
-        <button id ="btnAddProduct" class="button">Add Product</button>
-      </div>
     </div>
 
     <!-- footer -->
@@ -96,6 +95,6 @@
         </div>
       </div>
     </div>
-    <script src="AddProduct.js"></script>
+    <script src="../script.js"></script>
   </body>
 </html>

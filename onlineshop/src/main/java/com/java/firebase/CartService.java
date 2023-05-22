@@ -1,45 +1,48 @@
 package com.java.firebase;
 
 import com.google.api.core.ApiFuture;
-import com.google.cloud.firestore.DocumentReference;
-import com.google.cloud.firestore.DocumentSnapshot;
-import com.google.cloud.firestore.Firestore;
-import com.google.cloud.firestore.WriteResult;
+import com.google.cloud.firestore.*;
 import com.google.firebase.cloud.FirestoreClient;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.concurrent.ExecutionException;
 
 @Service
 public class CartService {
-    public String createCart(CRUD crud, Cart cart) throws ExecutionException, InterruptedException {
+    public String createCart(Cart cart) throws ExecutionException, InterruptedException {
         Firestore dbFirestore = FirestoreClient.getFirestore();
-        ApiFuture<WriteResult> collectionsApiFuture = dbFirestore.collection("crud_user").document(crud.getName()).collection("cart").document(cart.getName()).set(cart);
+        ApiFuture<WriteResult> collectionsApiFuture = dbFirestore.collection("cart").document(cart.getCartId().toString()).set(cart);
         return collectionsApiFuture.get().getUpdateTime().toString();
     }
 
-    public Cart getCart(String documentId1, String documentId2) throws ExecutionException, InterruptedException {
+
+    public List<Cart> getCart(String username) throws ExecutionException, InterruptedException {
         Firestore dbFirestore = FirestoreClient.getFirestore();
-        DocumentReference documentReference = dbFirestore.collection("crud_user").document(documentId1).collection("cart").document(documentId2);
-        ApiFuture<DocumentSnapshot> future = documentReference.get();
-        DocumentSnapshot document = future.get();
-        Cart cart;
-        if (document.exists()) {
-            cart = document.toObject(Cart.class);
-            return cart;
+        CollectionReference cartsCollection = dbFirestore.collection("cart");
+        Query query = cartsCollection.whereEqualTo("username", username);
+        ApiFuture<QuerySnapshot> future = query.get();
+        List<QueryDocumentSnapshot> documents = future.get().getDocuments();
+
+        List<Cart> carts = new ArrayList<>();
+        for (DocumentSnapshot document : documents) {
+            Cart cart = document.toObject(Cart.class);
+            carts.add(cart);
         }
-        return null;
+
+        return carts;
     }
 
-    public String updateCart(CRUD crud, Cart cart) throws ExecutionException, InterruptedException {
+    public String updateCart(Cart cart) throws ExecutionException, InterruptedException {
         Firestore dbFirestore = FirestoreClient.getFirestore();
-        ApiFuture<WriteResult> collectionsApiFuture = dbFirestore.collection("crud_user").document(crud.getName()).collection("cart").document(cart.getName()).set(cart);
+        ApiFuture<WriteResult> collectionsApiFuture = dbFirestore.collection("cart").document(cart.getUsername()).set(cart);
         return collectionsApiFuture.get().getUpdateTime().toString();
     }
 
-    public String deleteCart(CRUD crud, String documentId) {
+    public String deleteCart(String documentId) {
         Firestore dbFirestore = FirestoreClient.getFirestore();
-        ApiFuture<WriteResult> writeResult = (ApiFuture<WriteResult>) dbFirestore.collection("crud_user").document(crud.getName()).collection("cart").document(documentId);
+        ApiFuture<WriteResult> writeResult = (ApiFuture<WriteResult>) dbFirestore.collection("cart").document(documentId);
 
         return "Item(s) deleted" + documentId;
     }
