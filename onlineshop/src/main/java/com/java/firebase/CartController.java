@@ -2,30 +2,32 @@ package com.java.firebase;
 
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.concurrent.ExecutionException;
 
 @RestController
+@CrossOrigin(origins = "*")
 public class CartController {
     public CartService cartService;
     public CartController(CartService cartService){
         this.cartService = cartService;
     }
 
-    @PostMapping("/create/cart")
-    public String createCart(@RequestBody  CRUD crud,Cart cart) throws InterruptedException, ExecutionException {
-        return cartService.createCart(crud, cart);
+    @PostMapping("/cart/create")
+    public String createCart(@RequestBody Cart cart) throws InterruptedException, ExecutionException {
+        return cartService.createCart(cart);
     }
-    @GetMapping("/get/cart")
-    public Cart getCart(@RequestParam String documentId1, String documentId2) throws InterruptedException, ExecutionException {
-        return cartService.getCart(documentId1, documentId2);
+    @GetMapping("/cart/get")
+    public List<Cart> getCartsByUsername(@RequestParam String username) throws InterruptedException, ExecutionException {
+        return cartService.getCart(username);
     }
 
-    @PutMapping("/update/cart")
-    public String updateCart(@RequestParam CRUD crud, Cart cart) throws InterruptedException, ExecutionException {
-        return cartService.updateCart(crud,cart);
+    @PutMapping("/cart/update")
+    public String updateCart(@RequestParam Cart cart) throws InterruptedException, ExecutionException {
+        return cartService.updateCart(cart);
     }
-    @PutMapping("/delete/cart")
-    public String deleteCart(@RequestParam CRUD crud, String documentId) throws InterruptedException, ExecutionException {
-        return cartService.deleteCart(crud, documentId);
+    @PutMapping("/cart/delete")
+    public String deleteCart(@RequestParam String documentId) throws InterruptedException, ExecutionException {
+        return cartService.deleteCart(documentId);
     }
 }
