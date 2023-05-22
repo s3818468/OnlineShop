@@ -486,12 +486,4 @@ th:last-child{
   font-size: 14px;
   line-height: 20px;
 }
-.add_to_cart{
-  display: inline-block;
-  background: #010052;
-  color: white;
-  padding: 8px 15px;
-  margin: 10px 5px;
-  border-radius: 30px;
-  transition: background 0.5s;
-}
+
