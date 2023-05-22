@@ -1,8 +1,8 @@
-/*let user= localStorage.getItem("currentUser")
+let user= localStorage.getItem("currentUser")
     if(user==null){
         alert("please login")
-    window.location.href="SignUp.html"
-    }*/
+    window.location.href="../SignUp.html"
+    }
 const owner = localStorage.getItem('currentUser');
 let btnAddProduct = document.getElementById("btnAddProduct");
 
