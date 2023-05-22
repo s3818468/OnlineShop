@@ -27,18 +27,15 @@ a {
   text-decoration: none;
   color: black;
 }
-
 p {
   color: #555;
 }
-
 .container {
   max-width: 1300px;
   margin: auto;
   padding-left: 25px;
   padding-right: 25px;
 }
-
 .row {
   display: flex;
   align-items: center;
@@ -73,11 +70,9 @@ p {
 .header .row{
     margin-top: 70px;
 }
-
 .button:hover{
   background: #1d8dde;
 }
-
 .catagories{
   margin: 70px 0;
   
@@ -124,7 +119,6 @@ p {
   bottom: 0;
   left: 50%;
   transform: translateX(-50%);
-
 }
 h4{
   color: #555;
@@ -168,18 +162,7 @@ h4{
   margin-left: 20px;
   display: none;
 }
-
-
 /*----- allproduct -----*/
-.add_to_cart{
-  display: inline-block;
-  background: #010052;
-  color: white;
-  padding: 8px 15px;
-  margin: 10px 5px;
-  border-radius: 30px;
-  transition: background 0.5s;
-}
 .row-2{
   justify-content: space-between;
   margin: 100px auto 50px;
@@ -191,7 +174,23 @@ select{
 select:focus{
   outline: none;
 }
-
+.pageButton{
+  margin: 0 auto 80px;
+}
+.pageButton span{
+  display: inline-block;
+  border: 1px solid black;
+  margin-left: 10px;
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  line-height: 40px;
+  cursor: pointer;
+}
+.pageButton span:hover{
+  background: #1d8dde;
+  color: #fff;
+}
 @media only screen and (max-width: 800px){
   nav ul{
     position: absolute;
@@ -216,8 +215,6 @@ select:focus{
     cursor: pointer;
   }
 }
-
-
 .single-product{
   margin-top: 80px;
 }
@@ -246,7 +243,11 @@ input:focus{
 .single-product .fa{
   color: yellow
 }
-
+.manageProduct{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
 /*----- productform -----*/
 .form-container h3{
     font-size: 20px;
@@ -296,7 +297,6 @@ input:focus{
   height: 40px;
   margin-top: 10px;
 }
-
 .loginContainer{
   background-image: linear-gradient(rgba(206, 73, 70, 0.8),rgba(142, 142, 240, 0.8)) ,url("images/rmitvietnamlandscape.jpg");
   width: 100%;
@@ -304,9 +304,7 @@ input:focus{
   background-position: center;
   background-size: cover;
   position: relative;
-
 }
-
 .form-box{
   width: 90%;
   max-width: 450px;
@@ -335,7 +333,6 @@ input:focus{
   left: 50%;
   transform: translateX(-50%);
 }
-
 .input-field{
   background: #eaeaea;
   margin: 15px 0;
@@ -345,7 +342,6 @@ input:focus{
   max-height: 65px;
   transition: max-height 0.5s;
   overflow: hidden;
-
 }
 .input-field input{
   width: 100%;
@@ -354,7 +350,6 @@ input:focus{
   outline: 0;
   padding: 18px 20px;
 }
-
 .input-field i{
   margin-left: 15px;
   color: red;
@@ -364,7 +359,6 @@ form a{
   font-size: 13px;
   color: #1d8dde;
 }
-
 .button-field{
   width: 100%;
   display: flex;
@@ -381,27 +375,21 @@ form a{
   cursor: pointer;
   transition: background 1s;
 }
-
 .input-group{
   height: 280px;
 }
-
 .button-field button.disable{
   background: #eaeaea;
   color: #555;
 }
-
-
 /* cart */
 .cart-page{
   margin: 80px auto;
-
 }
 table{
   width: 100%;
   border-collapse: collapse;
 }
-
 .cart-info{
   display: flex;
   flex-wrap: wrap;
@@ -420,7 +408,6 @@ td input{
   width: 40px;
   height: 30px;
   padding: 5px;
-
 }
 td a{
   color: #E40138;
@@ -431,7 +418,6 @@ td img{
   
   margin-right: 10px;
 }
-
 .total-price{
   display: flex;
   justify-content: flex-end;
@@ -440,7 +426,6 @@ td img{
   border-top: 3px solid 3711c0 ; 
   max-width: 350px;
 }
-
 td:last-child{
   text-align: right;
 }
@@ -464,28 +449,23 @@ th:last-child{
   outline: 0;
   cursor: pointer;
 }
-
 /* account */
 .input-group {
   padding: 5px;
 }
-
 .input-group label {
   display: flex;
   margin-bottom: 5px;
 }
-
 .input-group input {
   width: 100%;
   padding: 8px;
   border: 1px solid #ccc;
   border-radius: 4px;
 }
-
 .btn-group {
   margin-top: 20px;
 }
-
 .btn-group button {
   display: inline-block;
   padding: 10px 20px;
@@ -495,4 +475,41 @@ th:last-child{
   border-radius: 4px;
   cursor: pointer;
   margin-right: 10px;
+}
+/* prroduct */
+
+.name{
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+.desc{
+  font-size: 14px;
+  line-height: 20px;
+}
+.add_to_cart{
+  display: inline-block;
+  background: #010052;
+  color: white;
+  padding: 8px 15px;
+  margin: 10px 5px;
+  border-radius: 30px;
+  transition: background 0.5s;
+}
+.details{
+  display: inline-block;
+  background: #010052;
+  color: white;
+  padding: 8px 15px;
+  margin: 10px 5px;
+  border-radius: 30px;
+  transition: background 0.5s;
+}
+
+#parent>div{
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  padding: 20px 30px;
+  border-radius: 5px;
+}
+#parent>div:hover{
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
