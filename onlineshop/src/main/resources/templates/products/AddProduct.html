@@ -1,101 +1,102 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="stylesheet" href="../style.css" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600;700&display=swap"
-      rel="stylesheet" />
-    <script
-      src="https://kit.fontawesome.com/c07354a221.js"
-      crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="../style.css" />
+  <link
+          href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600;700&display=swap"
+          rel="stylesheet" />
+  <script
+          src="https://kit.fontawesome.com/c07354a221.js"
+          crossorigin="anonymous"></script>
 
-    <title>Add a product</title>
-  </head>
+  <title>Add a product</title>
+</head>
 
-  <body>
-    <div class="header"><div class="container">
-      <div class="NavBar">
-        <div class="logo">
-          <img src="../images\logo.png" width="125px" />
-        </div>
-        <nav>
-          <ul id="MenuItems">
-            <li><a href="../index.html"> Home </a></li>
-            <li><a href="../products/product.html"> Product </a></li>
-            <li><a href="AddProduct.html">Post Product</a></li>
-            <li><a href="../account.html"> Account </a></li>
-          </ul>
-        </nav>
-        <a href="../products/cart.html"><img src="../images/cart.png" width="30px" height="30px"/></a>
-        <img src="../images/menu.png" class="menu" onclick="menutoggle()" />
-      </div>
-    </div></div>
-    
-
-    <div class="container">
-      <form action="" method="post">
-        <div class="form-container">
-          <h3 class="text-center text-primary">Product Information</h3>
-          <div class="form-row">
-            <div class="form-col">
-              <label>Product Name</label>
-              <input type="text" id="name" class="form-control" placeholder="Product name" />
-            </div>
-            <div class="form-col">
-              <label>Product Description</label>
-              <textarea name="" id="desc" cols="30" rows="10"></textarea>
-              
-            </div>
-          </div>
-          <div class="form-row">
-            <div class="form-col">
-              <label>Price</label>
-              
-              <input type="text" id ="price" class="form-control" placeholder="Price" />
-            </div>
-            <div class="form-col">
-              <label>Discount Percentage</label>
-              <select id="disc">
-                <option value="0%">0%</option>
-                <option value="10%">10%</option>
-                <option value="20%">20%</option>
-                <option value="50%">50%</option>
-                <option value="80%">80%</option>
-              </select>
-            </div>
-          </div>
-          <div class="form-row">
-            <div class="form-col">
-              <label>Image File URL</label>
-              <input type="text" id="url" class="form-control" placeholder="Image URL" />
-            </div>
-          </div>
-        </div>
-      </form>
-      <div class="manageProduct">
-        <button id ="btnAddProduct" class="button">Add Product</button>
-      </div>
+<body>
+<div class="header"><div class="container">
+  <div class="NavBar">
+    <div class="logo">
+      <img src="../images\logo.png" width="125px" />
     </div>
+    <nav>
+      <ul id="MenuItems">
+        <li><a href="../index.html"> Home </a></li>
+        <li><a href="AddProduct.html"> Sell Products </a></li>
+        <li><a href="product.html"> Product </a></li>
 
-    <!-- footer -->
-    <hr />
-    <div class="footer">
-      <div class="container">
-        <div class="row">
-          <div class="footer-col">
-            <img src="../images/logo.png" />
-            <p>Reading is a passport to countless adventures</p>
-          </div>
-          <div class="footer-col-3">
-            <ul></ul>
-          </div>
+        <li><a href="../account.html"> Account </a></li>
+      </ul>
+    </nav>
+    <a href="../cart.html"><img src="../images/cart.png" width="30px" height="30px"/></a>
+    <img src="../images/menu.png" class="menu" onclick="menutoggle()" />
+  </div>
+</div></div>
+
+
+<div class="container">
+  <form action="" method="post">
+    <div class="form-container">
+      <h3 class="text-center text-primary">Product Information</h3>
+      <div class="form-row">
+        <div class="form-col">
+          <label>Product Name</label>
+          <input type="text" id="name" class="form-control" placeholder="Product name" />
+        </div>
+        <div class="form-col">
+          <label>Product Description</label>
+          <textarea name="" id="desc" cols="30" rows="10"></textarea>
+
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-col">
+          <label>Price</label>
+
+          <input type="text" id ="price" class="form-control" placeholder="Price" />
+        </div>
+        <div class="form-col">
+          <label>Discount Percentage</label>
+          <select id="disc">
+            <option value="0%">0%</option>
+            <option value="10%">10%</option>
+            <option value="20%">20%</option>
+            <option value="50%">50%</option>
+            <option value="80%">80%</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-col">
+          <label>Image File URL</label>
+          <input type="text" id="url" class="form-control" placeholder="Image URL" />
         </div>
       </div>
     </div>
-    <script src="AddProduct.js"></script>
-  </body>
+  </form>
+  <div class="manageProduct">
+    <button id ="btnAddProduct" class="button">Add Product</button>
+  </div>
+</div>
+
+<!-- footer -->
+<hr />
+<div class="footer">
+  <div class="container">
+    <div class="row">
+      <div class="footer-col">
+        <img src="../images/logo.png" />
+        <p>Reading is a passport to countless adventures</p>
+      </div>
+      <div class="footer-col-3">
+        <ul></ul>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="AddProduct.js"></script>
+</body>
 </html>
