@@ -1,17 +1,6 @@
-const MenuItems = document.getElementById("MenuItems");
-MenuItems.style.maxHeight = "0px";
-function menutoggle(){
-    console.log("pressed");
-    if(MenuItems.style.maxHeight == "0px"){
-        MenuItems.style.maxHeight = "200px";
-    }
-    else{
-        MenuItems.style.maxHeight = "0px";
-    }
-}
 
 let currentPage = 1;
-const productsPerPage = 12;
+const productsPerPage = 8;
 const products = []; // Array to store all the products
 
 async function viewAllProduct() {
@@ -63,17 +52,64 @@ function displayAll() {
     price.innerText="$"+el.price
     price.setAttribute("class","price")
 
-    div.append(image,name,price)
+    let btn1=document.createElement("button")
+    btn1.innerText="Add to Cart"
+    btn1.setAttribute("class","add_to_cart")
+    btn1.addEventListener("click",function(){
+
+        })
+
+    div.append(image,name,price,btn1)
 
     row.append(div);
   });
 }
 
 
+
+function displayPagination() {
+  const totalPages = Math.ceil(products.length / productsPerPage);
+  const paginationElement = document.querySelector("#pagination");
+  paginationElement.innerHTML = "";
+
+  const paginationWrapper = document.createElement("div");
+  paginationWrapper.classList.add("pagination-wrapper");
+
+  for (let i = 1; i <= totalPages; i++) {
+    const pageLink = document.createElement("a");
+    pageLink.href = "#";
+    pageLink.innerText = i;
+
+    if (i === currentPage) {
+      pageLink.classList.add("active");
+    }
+
+    pageLink.addEventListener("click", function () {
+      currentPage = i;
+      displayAll();
+      updatePaginationDisplay();
+    });
+    paginationWrapper.append(pageLink);
+
+  }
+  paginationElement.append(paginationWrapper);
+}
+
+function updatePaginationDisplay() {
+  const paginationLinks = document.querySelectorAll("#pagination a");
+  paginationLinks.forEach((link) => {
+    if (parseInt(link.innerText) === currentPage) {
+      link.classList.add("active");
+    } else {
+      link.classList.remove("active");
+    }
+  });
+}
+
 function viewProductDetails(product) {
   // Store the product details in session storage
   sessionStorage.setItem("selectedProduct", JSON.stringify(product));
 
   // Redirect to the product detail page
-  window.location.href = "./products/detail.html";
+  window.location.href = "detail.html";
 }

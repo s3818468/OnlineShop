@@ -10,57 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600;700&display=swap" rel="stylesheet" />
     <script src="https://kit.fontawesome.com/c07354a221.js" crossorigin="anonymous"></script>
     <style>
-          * {
-            padding: 0;
-            margin: 0;
-            box-sizing: border-box;
-        }
 
-        #display{
-            height: 70px;
-        }
-
-        .image{
-            max-width: 100px;
-            border-radius: 10px;
-            margin-top: 10px;
-            margin-bottom: 10px;
-        }
-        .name{
-            margin-top: 20px;
-            margin-bottom: 10px;
-        }
-        .desc{
-            font-size: 14px;
-            line-height: 20px;
-        }
-        .add_to_cart{
-            display: inline-block;
-            background: #010052;
-            color: white;
-            padding: 8px 15px;
-            margin: 10px 5px;
-            border-radius: 30px;
-            transition: background 0.5s;
-        }
-        .details{
-            display: inline-block;
-            background: #010052;
-            color: white;
-            padding: 8px 15px;
-            margin: 10px 5px;
-            border-radius: 30px;
-            transition: background 0.5s;
-        }
-
-        #parent>div{
-            box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-            padding: 20px 30px;
-            border-radius: 5px;
-        }
-        #parent>div:hover{
-            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-        }
     </style>
 
     <style>
@@ -158,30 +108,32 @@
           margin: 0 5px;
         }
     </style>
-    <title>All product1</title>
+    <title>All product</title>
 </head>
 
 <body>
 
-
-    <div class="container">
-        <div class="NavBar">
-            <div class="logo">
-                <img src="../images\logo.png" width="125px" />
-            </div>
-            <nav>
-                <ul id="MenuItems">
-                    <li><a href="../index.html"> Home </a></li>
-                    <li><a href="../products/product.html"> Product </a></li>
-                    <li><a href=""> Account </a></li>
-                </ul>
-            </nav>
-            <a href="../products/cart.html"><img src="../images/cart.png" width="30px" height="30px"/></a>
-            <img src="../images/menu.png" class="menu" onclick="menutoggle()" />
+<div class="header"><div class="container">
+    <div class="NavBar">
+        <div class="logo">
+            <img src="../images\logo.png" width="125px" />
         </div>
+        <nav>
+            <ul id="MenuItems">
+                <li><a href="../index.html"> Home </a></li>
+                <li><a href="AddProduct.html"> Sell Products </a></li>
+                <li><a href="product.html"> Product </a></li>
 
+                <li><a href="../account.html"> Account </a></li>
+            </ul>
+        </nav>
+        <a href="../cart.html"><img src="../images/cart.png" width="30px" height="30px"/></a>
+        <img src="../images/menu.png" class="menu" onclick="menutoggle()" />
     </div>
 
+</div>
+</div>
+<div class="small-container">
     <div id="parent" class="products">
 
     </div>
@@ -191,24 +143,26 @@
     <div class="manageProduct">
         <a href="AddProduct.html" class="button">Manage products</a>
     </div>
-    <!-- footer -->
-    <hr>
-    <div class="footer">
-        <div class="container">
-            <div class="row">
-                <div class="footer-col">
-                    <img src="../images/logo.png">
-                    <p> Reading is a passport to countless adventures</p>
-                </div>
-                <div class="footer-col-3">
-                    <ul>
+</div>
 
-                    </ul>
-                </div>
+<!-- footer -->
+<hr>
+<div class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="footer-col">
+                <img src="../images/logo.png">
+                <p> Reading is a passport to countless adventures</p>
+            </div>
+            <div class="footer-col-3">
+                <ul>
+
+                </ul>
             </div>
         </div>
     </div>
-    <script src="product.js"></script>
+</div>
+<script src="product.js"></script>
 </body>
 
 </html>
