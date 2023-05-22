@@ -52,14 +52,7 @@ function displayAll() {
     price.innerText="$"+el.price
     price.setAttribute("class","price")
 
-    let btn1=document.createElement("button")
-    btn1.innerText="Add to Cart"
-    btn1.setAttribute("class","add_to_cart")
-    btn1.addEventListener("click",function(){
-
-        })
-
-    div.append(image,name,price,btn1)
+    div.append(image,name,price)
 
     row.append(div);
   });
