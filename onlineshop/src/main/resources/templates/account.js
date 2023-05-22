@@ -1,70 +1,62 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Account</title>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600;700&display=swap"
-      rel="stylesheet" />
-    <script
-      src="https://kit.fontawesome.com/c07354a221.js"
-      crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="./style.css" />
-  </head>
-  <body>
-    <div class="header">
-      <div class="container">
-        <div class="NavBar">
-          <div class="logo">
-            <img src="./images/logo.png" width="125px" />
-          </div>
-          <nav>
-            <ul id="MenuItems">
-              <li><a href="./index.html"> Home </a></li>
-              <li><a href="./products/product.html"> Product </a></li>
-              <li><a href="./products/AddProduct.html">Post Product</a></li>
-              <li><a href="./account.html"> Account </a></li>
-            </ul>
-          </nav>
-          <a href="./products/cart.html"
-            ><img src="./images/cart.png" width="30px" height="30px"
-          /></a>
-          <img src="./images/menu.png" class="menu" onclick="menutoggle()" />
-        </div>
-      </div>
-    </div>
+const currentUser = localStorage.getItem('currentUser');
+const addressInput = document.querySelector('#address');
+const passwordInput = document.querySelector('#password');
+const phoneInput = document.querySelector('#phone');
+const updateButton = document.querySelector('commitChanges');
+let userName = document.getElementById("Username")
+userName.innerText = "Username: " + currentUser;
+fetch('http://localhost:8080/get?documentId=' + currentUser)
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        return response.json();
+    })
+    .then(json => {
+        const { name, password, address, phoneid } = json;
+        addressInput.value = address;
+        passwordInput.value = password;
+        phoneInput.value = phoneid;
+    })
+    .catch(error => {
+        // Handle the error here
+        console.error('Error:', error);
+        alert('Could not find anything. Please try again.');
+    });
+document.querySelector("#commitChanges").onclick = function () {
+         let address = addressInput.value;
+         let phone = phoneInput.value;
+         let password = passwordInput.value;
+         fetch('http://localhost:8080/create', {
+                                  method: "post",
+                                  headers: {
+                                      'Content-Type': 'application/json'
+                                  },
+                                  body: JSON.stringify({name: currentUser, phoneid: phone, password: password, address:address})
+                              })
+                              .then(response => {
+                                  if (response.ok) {
+                                      alert('Account updated successfully!');
+                                      return response.json();
+                                  } else {
+                                      throw new Error('Server Error');
+                                  }
+                              })
+                              .then(json => {
+                                  console.log(json);
+                                  // Additional code for success response if needed
+                              })
+                              .catch(error => {
+                                  console.error(error);
+                                  if (error.message === 'Server Error') {
+                                      alert('An error occurred while updating the account. Please try again later.');
+                                  }
+                              });}
+document.querySelector("#goHome").onclick = function () {
+    window.location.href = "index.html";
 
-    <div class="small-container">
-      <h1>Account</h1>
-      <div class="input-group">
-        <label id="Username">Username:</label>
+}
+document.querySelector("#logOut").onclick = function () {
+    window.location.href = "signUp.html";
 
-        <label for="password">Password:</label>
-        <input
-          type="password"
-          id="password"
-          name="password"
-          placeholder="Enter your password" />
-
-        <label for="address">Address:</label>
-        <input
-          type="text"
-          id="address"
-          name="address"
-          placeholder="Enter your address" />
-
-        <label for="phone">Phone:</label>
-        <input
-          type="text"
-          id="phone"
-          name="phone"
-          placeholder="Enter your phone number" />
-      </div>
-      <div class="btn-group">
-        <button type="button" id="commitChanges">Commit Changes</button>
-
-        <button type="button" id="logOut">Log Out</button>
-      </div>
-    </div>
-    <script src="account.js"></script>
-  </body>
-</html>
+}
