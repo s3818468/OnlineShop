@@ -46,3 +46,17 @@ public class CartService {
 
         return "Item(s) deleted" + documentId;
     }
+    public String deleteCart2(String username) throws ExecutionException, InterruptedException {
+        Firestore dbFirestore = FirestoreClient.getFirestore();
+        CollectionReference cartsCollection = dbFirestore.collection("cart");
+        Query query = cartsCollection.whereEqualTo("username", username);
+        ApiFuture<QuerySnapshot> future = query.get();
+        List<QueryDocumentSnapshot> documents = future.get().getDocuments();
+
+        for (DocumentSnapshot document : documents) {
+            ApiFuture<WriteResult> deleteFuture = document.getReference().delete();
+            deleteFuture.get();
+        }
+
+        return "Carts deleted for username: " + username;
+    }
