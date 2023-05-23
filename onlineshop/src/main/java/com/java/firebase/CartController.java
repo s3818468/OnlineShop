@@ -26,7 +26,7 @@ public class CartController {
     public String updateCart(@RequestParam Cart cart) throws InterruptedException, ExecutionException {
         return cartService.updateCart(cart);
     }
-    @PutMapping("/cart/delete")
+    @DeleteMapping("/cart/delete")
     public String deleteCart(@RequestParam String documentId) throws InterruptedException, ExecutionException {
         return cartService.deleteCart(documentId);
     }
