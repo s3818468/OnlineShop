@@ -30,4 +30,8 @@ public class CartController {
     public String deleteCart(@RequestParam String documentId) throws InterruptedException, ExecutionException {
         return cartService.deleteCart(documentId);
     }
+    @DeleteMapping("/cart/delete2")
+    public String deleteCart2(@RequestParam String username) throws InterruptedException, ExecutionException {
+        return cartService.deleteCart2(username);
+    }
 }
