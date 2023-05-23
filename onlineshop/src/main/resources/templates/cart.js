@@ -94,7 +94,7 @@ fetch('http://localhost:8080/cart/get?username=' + owner)
                   }
                 })
                 .then(json => {
-                window.location.href = "index.html";
+                window.location.href = "cart.html";
                   console.log(json);
                 })
                 .catch(error => {
@@ -121,5 +121,3 @@ fetch('http://localhost:8080/cart/get?username=' + owner)
       console.error(error);
       alert('An error occurred while retrieving the cart items. Please try again later.');
     });
-
-
