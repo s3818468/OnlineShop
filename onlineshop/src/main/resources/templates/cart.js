@@ -3,6 +3,17 @@ const checkout = document.getElementById("checkout");
 let totalPrice = 0;
 
 checkout.onclick = function() {
+  var url = "http://localhost:8080/cart/delete2?username="+owner
+
+
+         fetch(url, {
+             method: "delete"
+         })
+             .then(response => response.json())
+             .then(json => {
+                 console.log(json)
+             })
+
   alert('Thank you for your purchase, we will contact you soon');
   window.location.href = "index.html";
 };
@@ -83,7 +94,7 @@ fetch('http://localhost:8080/cart/get?username=' + owner)
                   }
                 })
                 .then(json => {
-             
+                window.location.href = "index.html";
                   console.log(json);
                 })
                 .catch(error => {
@@ -110,4 +121,5 @@ fetch('http://localhost:8080/cart/get?username=' + owner)
       console.error(error);
       alert('An error occurred while retrieving the cart items. Please try again later.');
     });
+
 
