@@ -42,8 +42,7 @@ public class CartService {
 
     public String deleteCart(String documentId) {
         Firestore dbFirestore = FirestoreClient.getFirestore();
-        ApiFuture<WriteResult> writeResult = (ApiFuture<WriteResult>) dbFirestore.collection("cart").document(documentId);
+        ApiFuture<WriteResult> writeResult = (ApiFuture<WriteResult>) dbFirestore.collection("cart").document(documentId).delete();
 
         return "Item(s) deleted" + documentId;
     }
-}
