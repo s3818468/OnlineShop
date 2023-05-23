@@ -83,7 +83,7 @@ fetch('http://localhost:8080/cart/get?username=' + owner)
                   }
                 })
                 .then(json => {
-                window.location.href = "index.html";
+             
                   console.log(json);
                 })
                 .catch(error => {
